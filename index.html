@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#efeeeb">
+  <meta name="description" content="五种可亲手体验的网页交互：分层镜头拉远、弧形轮播、3D 玻璃倾斜、文件夹展开和粒子扰动。">
+  <title>交互实验室 — Interaction Lab</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%231a2823'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23b7efce'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="交互实验室首页"><span class="brand-mark">↗</span> interaction<span class="brand-serif">lab.</span></a>
+    <div class="header-note"><span class="live-dot"></span> 让网页，动起来</div>
+    <a class="source-link" href="https://www.douyin.com/video/7691629441033751858" target="_blank" rel="noopener noreferrer">参考视频 <span>↗</span></a>
+  </header>
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="intro"><p class="eyebrow">A COLLECTION OF INTERACTIONS</p><h1>交互<span class="serif">，</span><br>不止于点击<span class="mint-point">.</span></h1><p class="intro-copy">五种网页交互，亲手感受。<br>从一个动作，到一场体验。</p></div>
+      <nav class="effect-nav" aria-label="选择交互效果">
+        <button class="effect-tab active" data-effect="0" aria-current="true"><span class="nav-num">01</span><span><strong>镜头拉远</strong><small>Scene to capsule</small></span><span class="nav-arrow">↗</span></button>
+        <button class="effect-tab" data-effect="1"><span class="nav-num">02</span><span><strong>弧形轮播</strong><small>Curved carousel</small></span><span class="nav-arrow">↗</span></button>
+        <button class="effect-tab" data-effect="2"><span class="nav-num">03</span><span><strong>玻璃倾斜</strong><small>3D glass tilt</small></span><span class="nav-arrow">↗</span></button>
+        <button class="effect-tab" data-effect="3"><span class="nav-num">04</span><span><strong>文件夹展开</strong><small>Folder hover</small></span><span class="nav-arrow">↗</span></button>
+        <button class="effect-tab" data-effect="4"><span class="nav-num">05</span><span><strong>粒子扰动</strong><small>Particle interaction</small></span><span class="nav-arrow">↗</span></button>
+      </nav>
+      <div class="sidebar-foot"><span class="tiny-orbit">✳</span><p>小动作。大感受。<br><span>Built to be played with.</span></p></div>
+    </aside>
+    <section class="workspace" aria-label="交互演示">
+      <div class="workspace-heading"><div><span class="eyebrow">PLAYGROUND</span><span class="current-index">01 / 05</span></div><button class="fullscreen-control" aria-label="进入全屏演示">⤢ <span>沉浸体验</span></button></div>
+      <div class="stage-wrap" id="stage-wrap">
+        <div class="stage" id="stage">
+          <section class="effect-panel zoom-panel active" id="effect-0" aria-label="分层镜头拉远与胶囊收合演示">
+            <div class="zoom-backdrop"></div>
+            <div class="zoom-scene" id="zoom-scene">
+              <div class="scene-canvas">
+              <img class="scene-image" src="assets/orchid-background-v2.png" alt="黑色背景下的淡紫色巨型兰花">
+              <div class="scene-shade"></div>
+              <h2 class="scene-title">New<br><em>freedoms</em></h2>
+              <div class="scene-right">of<br><em>imagination.</em></div>
+              <span class="scene-micro">A different point of view.<br>A little space for possibility.<br>Create something new.</span>
+              </div>
+              <div class="scene-blue"></div><span class="capsule-mark" aria-hidden="true">✳</span>
+            </div>
+            <img class="scene-person" src="assets/person-foreground-v2.png" alt="独立前景层中的人物侧影">
+            <div class="scene-bottom"><div class="scene-logo">Dream<br><b>STUDIO</b></div><span class="scene-pill">Explore ↗</span></div>
+            <div class="capsule-options" aria-label="收合后选择场景氛围"><button class="capsule-option option-silver" data-atmosphere="0" aria-label="银色氛围">◈</button><button class="capsule-option option-gold" data-atmosphere="1" aria-label="金色氛围">●</button><button class="capsule-reopen" aria-label="重新展开场景">✳</button><button class="capsule-option option-dark" data-atmosphere="2" aria-label="深色氛围">◕</button><button class="capsule-option option-pearl" data-atmosphere="3" aria-label="珠光氛围">●</button></div>
+            <div class="interaction-hint zoom-hint"><span>↕</span> 在画面上滚动，拉开距离</div>
+            <div class="zoom-progress"><span id="zoom-progress-bar"></span></div>
+          </section>
+          <section class="effect-panel carousel-panel" id="effect-1" aria-label="弧形唱片轮播演示" hidden>
+            <div class="carousel-top"><span class="record-brand">THE<br>LISTENING<br><em>ROOM.</em></span><p>GOOD SOUNDS.<br>DIFFERENT PERSPECTIVES.</p><span class="record-edition">VOL. 001—007</span></div>
+            <div class="disc-track" id="disc-track" tabindex="0" role="group" aria-label="唱片轮播，使用左右方向键或拖动切换"></div>
+            <div class="record-meta"><span class="record-counter">01 — 07</span><h2 id="record-title">AFTER HOURS</h2><p id="record-subtitle">深夜时刻 · ELECTRONIC / 2026</p></div>
+            <div class="carousel-controls"><button id="disc-prev" aria-label="上一张唱片">←</button><span>拖动唱片 · 滚轮切换</span><button id="disc-next" aria-label="下一张唱片">→</button></div>
+          </section>
+          <section class="effect-panel glass-panel" id="effect-2" aria-label="鼠标驱动的 3D 玻璃面板演示" hidden>
+            <div class="glass-atmosphere"></div>
+            <div class="glass-perspective" id="glass-perspective" tabindex="0" role="group" aria-label="在玻璃面板移动指针或使用方向键，改变倾斜角度">
+              <div class="glass-board" id="glass-board">
+                <div class="glass-top"><span class="glass-brand">FORMA®</span><span>Material / Motion / Feeling</span><span>EST. 2026</span></div>
+                <div class="glass-tiles" id="glass-tiles" aria-hidden="true"></div>
+                <div class="glass-accessible"><h2>Designed in glass.</h2><p>内容被裁进五片玻璃，分别随指针倾斜。</p></div>
+                <div class="glass-bottom"><span>REFLECTIONS IN MOTION</span><span id="tilt-readout">5 INDEPENDENT PANES</span></div>
+              </div>
+            </div>
+            <div class="interaction-hint glass-hint">↗ 移动指针，感受光与倾斜</div>
+          </section>
+          <section class="effect-panel folder-panel" id="effect-3" aria-label="悬停文件夹，卡片扇形展开演示" hidden>
+            <div class="folder-top"><span>CREATIVE ARCHIVE</span><span>FIVE LITTLE POSSIBILITIES ↗</span></div>
+            <span class="welcome-word" aria-hidden="true">welcome</span>
+            <div class="folder-system" id="folder-system">
+              <div class="folder-back"></div>
+              <div class="fan-cards" id="fan-cards">
+                <button class="fan-card fan-card-0" data-card="0" aria-label="查看 FORM 卡片"><span class="card-kicker">VISUAL EXPLORATION</span><strong>FORM</strong><span class="card-art form-art"><i></i><i></i><i></i></span><small>Shapes in motion ↗</small></button>
+                <button class="fan-card fan-card-1" data-card="1" aria-label="查看 PLAY 卡片"><span class="card-kicker">CREATIVE ENERGY</span><strong>PLAY<br>MORE.</strong><span class="card-art play-art">✳</span><small>Don't stand still ↗</small></button>
+                <button class="fan-card fan-card-2" data-card="2" aria-label="查看 FIELD 卡片"><span class="card-kicker">DESIGN PORTFOLIO</span><span class="field-art"><i></i><i></i><i></i></span><strong>FIELD<br>NOTES.</strong><small>Ideas from everywhere ↗</small></button>
+                <button class="fan-card fan-card-3" data-card="3" aria-label="查看 TYPE 卡片"><span class="card-kicker">LETTER BY LETTER</span><strong class="type-word">Aa<br>Bb.</strong><small>Words have character ↗</small></button>
+                <button class="fan-card fan-card-4" data-card="4" aria-label="查看 IDEA 卡片"><span class="card-kicker">A LITTLE EXPERIMENT</span><strong>GOOD<br>IDEA!</strong><span class="idea-art">↗</span><small>Make something new ↗</small></button>
+              </div>
+              <button class="folder-front" id="folder-toggle" aria-expanded="false" aria-label="展开作品文件夹"><span class="folder-tab"></span><span class="smile-sticker">☺</span><span class="idea-sticker">GOOD<br><b>IDEA</b> ✧</span><span class="folder-name">Little ideas<span>05 PROJECTS / OPEN TO EXPLORE</span></span><span class="folder-open-arrow">↗</span></button>
+            </div>
+            <div class="folder-caption" id="folder-caption" aria-live="polite">移到文件夹上，让灵感展开。<span>手机上点击打开 · 指向卡片，让它浮起</span></div>
+          </section>
+          <section class="effect-panel particle-panel" id="effect-4" aria-label="移动鼠标，拨散咖啡豆粒子的物理演示" hidden>
+            <canvas id="particle-canvas" aria-label="具有惯性、旋转和回弹的咖啡豆粒子"></canvas>
+            <div class="particle-top"><span>ORGANIC / 05</span><span>SMALL FORCES. BIG MOVEMENTS.</span></div>
+            <div class="particle-copy"><span class="eyebrow">ORDER MEETS PLAY</span><h2>A little<br><em>chaos.</em></h2><p>轻轻拨动，秩序开始流动。</p></div>
+            <div class="particle-bottom"><span><i class="live-dot"></i> <span id="particle-count">550</span> LIVING PARTICLES</span><span>移动 / 滑动指针 ↗</span></div>
+          </section>
+        </div>
+        <button class="exit-fullscreen" aria-label="退出全屏演示">关闭 ×</button>
+      </div>
+      <div class="control-strip"><div class="control-slider"><label id="strength-label" for="strength">收合进度</label><input id="strength" type="range" min="0" max="100" value="0"><output id="strength-value">0%</output></div><div class="control-buttons"><button id="reset" aria-label="重置当前效果">↺ <span>重置</span></button><button id="autoplay" aria-pressed="false">▷ <span>自动演示</span></button></div></div>
+      <div class="effect-description"><div><span class="description-number">01</span><h2 id="effect-title">镜头拉远<span>Layered scene collapse</span></h2></div><p id="effect-detail">画面边界收成蓝色胶囊，人物独立留在前景。文字被遮罩裁掉，花朵与人物以不同速度后退。</p><span class="tech-tag" id="tech-tag">MASK × LAYERS</span></div>
+    </section>
+  </main>
+  <footer class="page-footer"><span>INTERACTION LAB / 2026</span><span>交互方式参考蓝戈视频 · 画面为重新制作的演示素材</span><span>MOVE. EXPLORE. FEEL.</span></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
